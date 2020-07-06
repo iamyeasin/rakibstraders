@@ -98,9 +98,6 @@ public class createPDF {
         this.Change = change;
         this.Due = Due;
         
-        
-        
-        
     }
     
 //    K:\Projects\V 1.0.4.0\V 1.0.4.0\PDF
@@ -134,13 +131,12 @@ public class createPDF {
     
     
     public void gen(){
-        
         try {
             float left = 30;
             float right = 30;
             float top = 30;
             float bottom = 0;
-            setFileName("/" + ID + ".pdf");
+            setFileName(cwd + "\\src\\PDF\\" + ID + ".pdf");
             Document document = new Document(PageSize.A4, left, right, top, bottom);
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(FILE));
             document.setMargins(50, 50, 50, 50);
@@ -166,10 +162,9 @@ public class createPDF {
             Image logo = Image.getInstance(IMG);
             logo.setAbsolutePosition(50, 720);
             logo.setAlignment(Element.ALIGN_LEFT);
-             document.add(Empty);
-             document.add(Empty);
-             document.add(Empty);
-
+            document.add(Empty);
+            document.add(Empty);
+            document.add(Empty);
             document.add(table1);
 
             
